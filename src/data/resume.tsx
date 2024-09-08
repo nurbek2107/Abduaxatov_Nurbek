@@ -44,11 +44,10 @@ export const DATA = {
 
         navbar: true,
       },
-      X: {
+      Telegram: {
         name: "Telegram",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://t.me/JS_deveIoper",
         icon: Icons.Telegram,
-
         navbar: true,
       },
       Youtube: {
