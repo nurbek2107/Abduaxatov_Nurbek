@@ -15,10 +15,11 @@ export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <h1 className="text-3xl font-bold text-center">Blog</h1>
-          <section id="education">
+      
+      <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Template ui</h2>
+            <h2 className="text-xl font-bold">Template UI</h2>
           </BlurFade>
           {DATA.template.map((template, id) => (
             <BlurFade
@@ -26,7 +27,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
-                key={template.school}
                 href={template.href}
                 logoUrl={template.logoUrl}
                 altText={template.school}
@@ -38,6 +38,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+      
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -46,12 +47,14 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
         </div>
       </section>
+
+
     </main>
   );
 }

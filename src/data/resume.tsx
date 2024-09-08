@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Nurbek Abduaxatov ",
   initials: "NA",
-  url: "https://profile-new-sigma.vercel.app/",
+  url: "https://abduaxatov-nurbek.vercel.app/",
   location: "Uzbekistan, Andijon, Bo'ston",
   locationLink: "https://maps.app.goo.gl/Eubd9TkVLZhBkxD16",
   description:
@@ -60,6 +60,12 @@ export const DATA = {
 
         navbar: true,
       },
+      tel: {
+        name: "tel",
+        url: "tel:+998940192117",
+        icon: Icons.whatsapp,
+        navbar: true,
+      },
       Telegram: {
         name: "Telegram",
         url: "https://t.me/JS_deveIoper",
@@ -71,7 +77,7 @@ export const DATA = {
         url: "mailto:abduaxatov007@gmail.com",
         icon: Icons.email,
         navbar: true,
-      },
+      }
     },
   },
 
