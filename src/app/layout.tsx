@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import Speed  from "@/components/Speed";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
@@ -64,7 +65,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}
+            <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14 items-center gap-20  justify-center ">
             <Navbar />
+              <Speed />
+            </div>
           </TooltipProvider>
         </ThemeProvider>
       </body>
