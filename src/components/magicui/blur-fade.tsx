@@ -14,7 +14,7 @@ interface BlurFadeProps {
   delay?: number;
   yOffset?: number;
   inView?: boolean;
-  inViewMargin?: number | string; // Tipni o'zgartirdik
+  inViewMargin?: number | string; // Accepts number or string with units
   blur?: string;
 }
 
@@ -26,18 +26,23 @@ const BlurFade = ({
   delay = 0,
   yOffset = 6,
   inView = false,
-  inViewMargin = -50, // Default qiymat sifatida number
+  inViewMargin = -50,
   blur = "6px",
 }: BlurFadeProps) => {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+
+  // Convert inViewMargin to a valid CSS margin string type
+  const formattedInViewMargin: string =
+    typeof inViewMargin === "number" ? `${inViewMargin}px` : inViewMargin;
+
+  const inViewResult = useInView(ref, { once: true, margin: formattedInViewMargin as any });
   const isInView = !inView || inViewResult;
 
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
-  
+
   const combinedVariants = variant || defaultVariants;
 
   return (
