@@ -20,7 +20,7 @@ const actions = [
 
 export default function BasicSpeedDial() {
     return (
-        <div className="mt-[-240px]">
+        <div className="mt-[-230px]">
         <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
             <SpeedDial
                 ariaLabel="SpeedDial basic example"
