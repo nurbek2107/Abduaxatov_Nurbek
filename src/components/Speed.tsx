@@ -12,17 +12,16 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 // Actions list
 const actions = [
-    { icon: <PhoneIcon />, name: "Phone", url: "tel:+998940192117" }, // Phone action
-    { icon: <EmailIcon />, name: "Email", url: "mailto:abduaxatov007@gmail.com" }, // Email action
-    { icon: <TelegramIcon />, name: "Telegram", url: "https://t.me/JS_deveIoper" }, // Telegram action
+    { icon: <PhoneIcon />, name: "Phone", url: "tel:+998940192117" }, 
+    { icon: <EmailIcon />, name: "Email", url: "mailto:abduaxatov007@gmail.com" },
+    { icon: <TelegramIcon />, name: "Telegram", url: "https://t.me/JS_deveIoper" },
 ];
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false); // Use `useState` from the imported React
+    const [open, setOpen] = useState(false); 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    // Specify the type for url as string
     const handleClick = (url: string) => {
         if (url) {
             window.open(url, "_blank");
@@ -52,7 +51,7 @@ export default function Navbar() {
                             icon={action.icon}
                             tooltipTitle={action.name}
                             tooltipOpen
-                            onClick={() => handleClick(action.url)} // Handle click with the action URL
+                            onClick={() => handleClick(action.url)} 
                             sx={{
                                 color: "white",
                             }}
