@@ -60,12 +60,25 @@ export const DATA = {
 
         navbar: true,
       },
+      tel: {
+        name: "tel",
+        url: "tel:+998940192117",
+        icon: Icons.whatsapp,
+        navbar: true,
+      },
       Telegram: {
         name: "Telegram",
         url: "https://t.me/JS_deveIoper",
         icon: Icons.Telegram,
         navbar: true,
       },
+      email: {
+        name: "Send Email",
+        url: "mailto:abduaxatov007@gmail.com",
+        icon: Icons.email,
+        navbar: true,
+      }
+
     },
   },
 

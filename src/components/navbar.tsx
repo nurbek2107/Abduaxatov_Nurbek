@@ -38,7 +38,9 @@ export default function Navbar() {
         ))}
         <Separator orientation="vertical" className="h-full" />
         {Object.entries(DATA.contact.social)
-          .filter(([name]) => name !== "Telegram") // Exclude Telegram
+          .filter(([name]) => name !== "Telegram")
+          .filter(([name]) => name !== "tel")
+          .filter(([name]) => name !== "email")
           .filter(([_, social]) => social.navbar)
           .map(([name, social]) => (
             <DockIcon key={name}>
