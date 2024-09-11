@@ -1,3 +1,4 @@
+'use client';
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -8,13 +9,79 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import IconCloud from "@/components/magicui/icon-cloud";
+import confetti from "canvas-confetti";
+import { Button } from "@/components/ui/button";
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+   const handleClick = () => {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+ 
+    const randomInRange = (min: number, max: number) =>
+      Math.random() * (max - min) + min;
+ 
+    const interval = window.setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+ 
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+ 
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      });
+    }, 250);
+  };
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
+         <div className="relative">
+      <Button onClick={handleClick}>Trigger Fireworks</Button>
+    </div>
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
@@ -38,6 +105,7 @@ export default function Page() {
             </BlurFade>
           </div>
         </div>
+        
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
@@ -60,6 +128,9 @@ export default function Page() {
                 <Badge key={skill}>{skill}</Badge>
               </BlurFade>
             ))}
+      <div className="  m-auto   max-w-[32rem]   bg-background px-20   ">
+      <IconCloud iconSlugs={slugs} />
+    </div>
           </div>
         </div>
       </section>
@@ -107,6 +178,7 @@ export default function Page() {
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
+              
             </BlurFade>
           ))}
         </div>
