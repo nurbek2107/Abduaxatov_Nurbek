@@ -12,7 +12,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import { DATA } from "@/data/resume";
 
 const actions = [
-    { icon: <DownloadIcon />, name: 'Resume', url: "/Nurbek_Abduaxatov.pdf" }, // Updated path
+    { icon: <DownloadIcon />, name: 'Resume', url: "/public/Nurbek_Abduaxatov_resumen.pdf" }, 
     { icon: <Telegram />, name: 'Telegram', url: "https://t.me/JS_deveIoper" },
     { icon: <Email />, name: 'Email', url: "mailto:abduaxatov007@gmail.com" },
     { icon: <Tel />, name: 'Phone', url: "tel:+998940192117" }
