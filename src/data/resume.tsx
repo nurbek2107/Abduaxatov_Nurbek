@@ -21,7 +21,7 @@ export const DATA = {
     "C",
     "C++",
     "Javascript",
-    "HTML",
+    "HTML", 
     "CSS",
     "Tailwind",
     "Git",
