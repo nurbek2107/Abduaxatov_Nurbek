@@ -19,15 +19,14 @@ const actions = [
 ];
 
 export default function BasicSpeedDial() {
-    const handleDownload = (url) => {
+    const handleDownload = (url: string) => {
         const link = document.createElement('a');
         link.href = url;
-        link.download = url.split('/').pop(); // Extract filename from URL
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        link.download = url.split('/').pop() || ''; // Extract filename from URL
+        document.body.appendChild(link); // Append link to the body
+        link.click(); // Simulate click to start download
+        document.body.removeChild(link); // Remove link from the body
     };
-
     return (
         <div className="mt-[-232px]">
             <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
