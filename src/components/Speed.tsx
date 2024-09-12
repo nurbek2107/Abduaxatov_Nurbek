@@ -7,15 +7,15 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import Telegram from '@mui/icons-material/Telegram';
 import Email from '@mui/icons-material/Email';
 import Tel from '@mui/icons-material/Phone';
-import DownloadIcon from '@mui/icons-material/Download'; // Import the DownloadIcon
+import DownloadIcon from '@mui/icons-material/Download';
 import ShareIcon from '@mui/icons-material/Share';
 import { DATA } from "@/data/resume";
 
 const actions = [
+    { icon: <DownloadIcon />, name: 'Resume', url: "/Nurbek_Abduaxatov.pdf" }, // Updated path
     { icon: <Telegram />, name: 'Telegram', url: "https://t.me/JS_deveIoper" },
     { icon: <Email />, name: 'Email', url: "mailto:abduaxatov007@gmail.com" },
-    { icon: <Tel />, name: 'Phone', url: "tel:+998940192117" },
-    { icon: <DownloadIcon />, name: 'Download', url: "/me.jpg" } // Correct path
+    { icon: <Tel />, name: 'Phone', url: "tel:+998940192117" }
 ];
 
 export default function BasicSpeedDial() {
@@ -23,10 +23,11 @@ export default function BasicSpeedDial() {
         const link = document.createElement('a');
         link.href = url;
         link.download = url.split('/').pop() || ''; // Extract filename from URL
-        document.body.appendChild(link); // Append link to the body
-        link.click(); // Simulate click to start download
-        document.body.removeChild(link); // Remove link from the body
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
+
     return (
         <div className="mt-[-232px]">
             <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
@@ -41,7 +42,7 @@ export default function BasicSpeedDial() {
                             icon={action.icon}
                             tooltipTitle={action.name}
                             onClick={() => {
-                                if (action.name === 'Download') {
+                                if (action.name === 'Resume') { // Corrected comparison
                                     handleDownload(action.url);
                                 } else {
                                     window.open(action.url, '_blank');
