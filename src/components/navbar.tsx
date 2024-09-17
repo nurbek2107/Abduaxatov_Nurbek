@@ -12,6 +12,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect } from "react";
+
 export default function Navbar() {
   useEffect(() => {
     window.$crisp = [];
@@ -25,6 +26,7 @@ export default function Navbar() {
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
   }, []);
+
   return (
     <div className="h-full">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -87,7 +89,6 @@ export default function Navbar() {
           </Tooltip>
         </DockIcon>
       </Dock>
-
     </div>
   );
 }
