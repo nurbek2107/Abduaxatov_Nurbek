@@ -7,12 +7,10 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import Telegram from '@mui/icons-material/Telegram';
 import Email from '@mui/icons-material/Email';
 import Tel from '@mui/icons-material/Phone';
-import DownloadIcon from '@mui/icons-material/Download';
-import ShareIcon from '@mui/icons-material/Share';
-import { DATA } from "@/data/resume";
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const actions = [
-    { icon: <DownloadIcon />, name: 'Resume', url:  "https://drive.google.com/file/d/1Qd_zazz409EUJIgVdbNiu_XG1nvZrt3o/view?usp=sharing"}, 
+    { icon: <DescriptionIcon />, name: 'Resume', url:  "https://drive.google.com/file/d/1Qd_zazz409EUJIgVdbNiu_XG1nvZrt3o/view?usp=sharing"}, 
     { icon: <Telegram />, name: 'Telegram', url: "https://t.me/JS_deveIoper" },
     { icon: <Email />, name: 'Email', url: "mailto:abduaxatov007@gmail.com" },
     { icon: <Tel />, name: 'Phone', url: "tel:+998940192117" }
@@ -29,7 +27,7 @@ export default function BasicSpeedDial() {
     };
 
     return (
-        <div className="mt-[-232px]">
+        <div className="mt-[-232px]" >
             <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
                 <SpeedDial
                     ariaLabel="SpeedDial basic example"
