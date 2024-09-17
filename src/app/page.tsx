@@ -12,6 +12,7 @@ import Markdown from "react-markdown";
 import IconCloud from "@/components/magicui/icon-cloud";
 import confetti from "canvas-confetti";
 import { Button } from "@/components/ui/button";
+import Contact from "@/components/contact";
 const slugs = [
   "typescript",
   "javascript",
@@ -229,6 +230,9 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+      <section id="contact">
+      <Contact/>
+    </section>
     </main>
   );
 }

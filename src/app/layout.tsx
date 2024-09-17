@@ -66,8 +66,8 @@ export default function RootLayout({
           <TooltipProvider delayDuration={0}>
             {children}
             <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14 items-center gap-20  justify-center ">
+              {/* <Speed /> */}
             <Navbar />
-              <Speed />
             </div>
           </TooltipProvider>
         </ThemeProvider>
